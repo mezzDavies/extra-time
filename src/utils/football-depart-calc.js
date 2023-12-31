@@ -20,7 +20,7 @@ export default function footballDepartureTimeCalculator(
 
   if (
     kickOffTimeInSeconds >= 68400 &&
-    kickOffTimeInSeconds <= 72000 &&
+    kickOffTimeInSeconds <= 75600 &&
     !isWalking
   ) {
     timeToLeaveInSeconds -= 900;
