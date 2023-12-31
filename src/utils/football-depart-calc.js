@@ -32,7 +32,7 @@ export default function footballDepartureTimeCalculator(
   let travelMethod = "";
   isWalking ? (travelMethod = "walking") : (travelMethod = "driving");
 
-  return `You are ${travelMethod}, so set off at ${timeToLeave} to arrive at ${arrivalTime}`;
+  return `You are ${travelMethod}, set off at ${timeToLeave} to arrive at ${arrivalTime}`;
 }
 
 function convertKOTimeToSeconds(hours, minutes) {

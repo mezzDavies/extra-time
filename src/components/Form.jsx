@@ -19,10 +19,12 @@ export default function Form() {
     event.preventDefault();
     const redactedKickOffTime = kickOffTime.format("HH:mm");
     const isWalking = travelMethod === "walking" ? true : false;
+    const newTimeToLeave = footballDepartureTimeCalculator(
+      redactedKickOffTime,
+      isWalking
+    );
     setTimeout(() => {
-      setTimeToLeave(
-        footballDepartureTimeCalculator(redactedKickOffTime, isWalking)
-      );
+      setTimeToLeave(newTimeToLeave);
     }, 450);
   };
 
