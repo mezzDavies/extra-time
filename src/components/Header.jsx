@@ -24,7 +24,7 @@ export default function Header() {
           letterSpacing: 0.5,
         }}
       >
-        Get there before kick-off
+        Football Departure Calulator
       </Typography>
     </>
   );

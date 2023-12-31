@@ -1,8 +1,9 @@
 export default function footballDepartureTimeCalculator(
   kickOffTime,
-  isWalking = false
+  isWalking
 ) {
-  if (!kickOffTime) return "";
+  if (!kickOffTime || isWalking === undefined)
+    return "ERROR! Incorrect input...";
 
   const splitKOTime = kickOffTime.split(":");
   const kOHours = splitKOTime[0];
@@ -28,7 +29,10 @@ export default function footballDepartureTimeCalculator(
   const timeToLeave = convertSecondsToTime(timeToLeaveInSeconds);
   const arrivalTime = convertSecondsToTime(arrivalTimeInSeconds);
 
-  return `Set off no later than ${timeToLeave} to arrive at ${arrivalTime}`;
+  let travelMethod = "";
+  isWalking ? (travelMethod = "walking") : (travelMethod = "driving");
+
+  return `You are ${travelMethod}, so set off at ${timeToLeave} to arrive at ${arrivalTime}`;
 }
 
 function convertKOTimeToSeconds(hours, minutes) {
